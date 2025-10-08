@@ -10,8 +10,9 @@ class Chinela:
             self.tamanho += 1
 chinela = Chinela()
 
-while True:
+while chinela.getTamanho() == 0:
     print("Insira o tamanho da sua chinela: ")
     tamanho = int(input())
-     if tamanho >= 20 and tamanho <= 50 and tamanho %2 ==0
+    chinela.setTamanho(tamanho)
+print(f"Parabens, você comprou uma chinela tamanho", {chinela.getTamanho})
      
