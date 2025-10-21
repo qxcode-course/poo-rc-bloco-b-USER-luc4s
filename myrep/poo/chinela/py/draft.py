@@ -13,6 +13,10 @@ chinela = Chinela()
 while chinela.getTamanho() == 0:
     print("Insira o tamanho da sua chinela: ")
     tamanho = int(input())
+<<<<<<< HEAD
     chinela.setTamanho(tamanho)
 print(f"Parabens, você comprou uma chinela tamanho", {chinela.getTamanho})
+=======
+    if tamanho >= 20 and tamanho <= 50 and tamanho %2 ==0
+>>>>>>> b84b69d (Camisa)
      
