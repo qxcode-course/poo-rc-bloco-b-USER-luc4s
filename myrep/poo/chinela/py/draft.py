@@ -13,5 +13,5 @@ chinela = Chinela()
 while True:
     print("Insira o tamanho da sua chinela: ")
     tamanho = int(input())
-     if tamanho >= 20 and tamanho <= 50 and tamanho %2 ==0
+    if tamanho >= 20 and tamanho <= 50 and tamanho %2 ==0
      
