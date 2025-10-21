@@ -7,8 +7,13 @@
         },
         {
             "label": "2025-10-07_14-53-37",
-            "content": "class Chinela:\n    def __init__(self, tamanho: int):\n        self.tamanho = 0\n\n    def getTamanho(self,valor: int):\n        return self.tamanho\n    \n    def setTamanho(self, valor: int):\n        if tamanho >= 20 and tamanho <= 50 and tamanho %2 == 0:\n            self.tamanho += 1\nchinela = Chinela()\n\nwhile True:\n    print(\"Insira o tamanho da sua chinela: \")\n    tamanho = int(input())\n     ",
+            "content": "@@ -385,66 +385,8 @@\n ())%0A\n-    if tamanho %3E= 20 and tamanho %3C= 50 and tamanho %252 ==0%0A\n     \n",
             "lines": "16"
+        },
+        {
+            "label": "2025-10-21_13-31-46",
+            "content": "class Chinela:\n    def __init__(self, tamanho: int):\n        self.tamanho = 0\n\n    def getTamanho(self,valor: int):\n        return self.tamanho\n    \n    def setTamanho(self, valor: int):\n        if tamanho >= 20 and tamanho <= 50 and tamanho %2 == 0:\n            self.tamanho += 1\nchinela = Chinela()\n\nwhile True:\n    print(\"Insira o tamanho da sua chinela: \")\n    tamanho = int(input())\n    if tamanho >= 20 and tamanho <= 50 and tamanho %2 ==0\n     ",
+            "lines": "17"
         }
     ]
 }

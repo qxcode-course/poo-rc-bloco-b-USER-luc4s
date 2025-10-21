@@ -1,0 +1,79 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-21_14-14-51",
+            "content": "@@ -626,33 +626,8 @@\n t()%0A\n-        print(f%22$%7Bline%7D)%0A\n     \n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-10-21_14-16-06",
+            "content": "@@ -645,17 +645,16 @@\n %22$%7Bline%7D\n-%22\n )%0A      \n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-21_14-16-17",
+            "content": "@@ -620,18 +620,16 @@\n = input(\n-%22%22\n )%0A      \n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-21_14-17-05",
+            "content": "@@ -864,11 +864,4 @@\n upa)\n-%0Amain()\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-21_14-18-23",
+            "content": "@@ -101,68 +101,8 @@\n tr:%0A\n-        if sel.tamanho == %22%22:%0A            return %22size: ()%22%0A\n     \n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-21_14-20-38",
+            "content": "@@ -111,17 +111,16 @@\n   if sel\n-f\n .tamanho\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-10-21_14-21-02",
+            "content": "@@ -109,25 +109,24 @@\n     if self.\n-_\n tamanho == %22\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-10-21_14-21-26",
+            "content": "@@ -113,20 +113,18 @@\n if self.\n-getT\n+_t\n amanho =\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-10-21_14-22-14",
+            "content": "@@ -532,58 +532,85 @@\n int(\n-%22fail: Valor inv%C3%A1lido, tente PP, P, M, G, GG ou XG\n+f%22Tamanho inv%C3%A1lido! Os tamanhos permitidos s%C3%A3o: %7B', '.join(tamanhos_validos)%7D\n %22)%0A \n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-10-21_14-23-02",
+            "content": "@@ -155,16 +155,18 @@\n rn %22size\n+: \n ()%22%0A    \n@@ -435,16 +435,77 @@\n = valor%0A\n+            print(f%22Tamanho definido como: %7Bself._tamanho%7D%22)%0A\n         \n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-10-21_14-25-47",
+            "content": "@@ -100,24 +100,78 @@\n str:%0A       \n+ if self.getTamanho == %22%22:%0A            return %22size()%22\n %0A        ret\n@@ -182,17 +182,16 @@\n f%22size: \n-(\n %7Bself._t\n@@ -197,17 +197,16 @@\n tamanho%7D\n-)\n %22%0A    de\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-10-21_14-27-21",
+            "content": "@@ -281,14 +281,14 @@\n  %5B%22P\n-P\n %22, %22P\n+P\n %22, %22\n@@ -300,19 +300,17 @@\n G%22, %22GG%22\n- ou\n+,\n  %22XG%22%5D%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-21_14-27-50",
+            "content": "@@ -300,17 +300,19 @@\n G%22, %22GG%22\n-,\n+ ou\n  %22XG%22%5D%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-21_14-28-32",
+            "content": "@@ -676,19 +676,25 @@\n 0%5D == %22s\n-ize\n+etTamanho\n %22:%0A     \n@@ -787,60 +787,8 @@\n pa)%0A\n-        else:%0A            print(%22comando invalido%22)%0A\n main\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-21_14-33-37",
+            "content": "class Roupa:\n    def __init__(self):\n        self._tamanho: str = \"\"\n    \n    def __str__(self) -> str:\n       \n        return f\"size: ({self._tamanho})\"\n    def getTamanho(self) -> str:\n        return self._tamanho\n    def setTamanho(self, valor: str):\n        tamanhos_validos = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n\n        if valor in tamanhos_validos:\n            self._tamanho = valor\n        else:\n            print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n    \ndef main():\n    roupa = Roupa()\n\n    while True :\n        line = input(\"\")\n        print(f\"${line}\")\n        args = line.split(' ')\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"size\":\n            roupa.setTamanho(args[1])\n        elif args[0] == \"show\":\n            print(roupa)\n        else:\n            print(\"comando invalido\")\nmain()",
+            "lines": "33"
+        }
+    ]
+}
