@@ -21,31 +21,37 @@ class Watch:
             self.segundo = valor
         elif valor == 60:
             self.setMinuto(1)
-    
-    def getHora(self):
-        return self.hora
-    
-    def getMinuto(self):
-        return self.minuto
-    
-    def getSegundo(self):
-        return self.segundo
-    
-    def __str__(self) -> str:
-        return  f"{self.hora:02d}: {self.minuto:02d}: {self.segundo:02d}"
-    
+    def nextSegundo(self):
+        self.segundo += 1
+        if(self.segundo >=60):
+            self.minuto +=1
+            self.segundo = 0
+            if(self.minuto >=60):
+                self.hora +=1
+                self.minuto=0
+                if(self.hora >= 24):
+                    self.hora = 0
+
 def main():
     watch = Watch()
+
     while True:
         line = input()
         print(f"${line}")
-        args = line.split(" ")
-        
+        args = line.split()
+
         if args[0] == "end":
             break
         elif args[0] == "init":
             watch = Watch(int(args[1]), int(args[2]), int(args[3]))
         elif args[0] == "set":
-            watch.setHora(int(args[1]))
-            watch.setMinuto(int(args[2]))
-            watch.setSegundo(int(args[3]))
+            watch.set.Hora(int(args[1]))
+            watch.set.Minuto(int(args[2]))
+            watch.set.Segundo(int(args[3])) 
+        elif args[0] == "show":
+            print(watch)
+        elif args[0] == "next":
+            watch.nextSegundo()
+        else:
+            print("comando invalido")
+main()
