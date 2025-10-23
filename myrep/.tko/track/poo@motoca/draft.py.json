@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_17-28-59",
+            "content": "class Pessoa:\n    def __init__(self, nome: str, idade: int):\n        self._nome = nome\n        self._idade = idade\n\n    def getNome(self):\n        return self._nome\n    \n    def getIdade(self):\n        return self._idade\n    \n    def __str__(self):\n        return f\"{self._nome}:{self._idade}\"\n    \nclass Motoca:\n    def __init__(self,potencia = 1):\n        self.potencia = potencia\n        self.time = 0\n        self.pessoa = None\n\n    def inserir(self, pessoa: Pessoa):\n        if self.pessoa is not None:\n            print(\"fail: busy motorcycle\")\n            return False\n        self.pessoa = pessoa\n        return True\n    \n    def remover(self):\n        if self.pessoa is None:\n            print(\"fail: empty motorcycle\")\n            return None\n        pessoa = self.pessoa\n        self.pessoa = None\n        print(pessoa)\n        return pessoa\n    \n    def buyTime(self, time: int):\n        self.time += time\n\n    def drive(self, time: int):\n        if self.time <= 0:\n            print(\"fail: buy time first\")\n            return \n        if self.pessoa is None:\n            print(\"fail: empty motorcycle\")\n            return\n        if self.pessoa.getIdade() > 10:\n            print(\"fail: too old to drive\")\n            return \n        if time > self.time:\n            print(f\"fail: time finished after {self.time} minutes\")\n            self.time = 0\n        else:\n            self.time -= time\n\n        def honk(self):\n            return \"P\" + (\"e\" * self.potencia) + \"m\"\n\n        def __str__(self):\n            pessoa_str = str(self.pessoa) if self.pessoa else \"empty\"\n            return f\"power:{self.potencia}, time:{self.time}, person:({pessoa_str})\"",
+            "lines": "61"
+        }
+    ]
+}
