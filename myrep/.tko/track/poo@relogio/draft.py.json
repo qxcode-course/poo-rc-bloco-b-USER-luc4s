@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_15-07-31",
+            "content": "class Watch:\n    def __init__(self):\n        self.hora = 0\n        self.minuto = 0\n        self.segundo = 0\n    \n    def setHora(self, valor: int):\n        if valor >= 0 and valor <= 23:\n            self.hora = valor\n        elif valor > 23:\n            self.hora = 0\n    \n    def setMinuto(self, valor: int):\n        if valor >= 0 and valor <= 59:\n            self.minuto = valor\n        elif valor == 60:\n            self.setHora(1)\n    \n    def setSegundo(self, valor: int):\n        if valor >= 0 and valor <= 59:\n            self.segundo = valor\n        elif valor == 60:\n            self.setMinuto(1)\n    def nextSegundo(self):\n        self.segundo += 1\n        if(self.segundo >=60):\n            self.minuto +=1\n            self.segundo = 0\n            if(self.minuto >=60):\n                self.hora +=1\n                self.minuto=0\n                if(self.hora >= 24):\n                    self.hora = 0\n\ndef main():\n    watch = Watch()\n\n    while True:\n        line = input()\n        print(f\"${line}\")\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            watch = Watch(int(args[1]), int(args[2]), int(args[3]))\n        elif args[0] == \"set\":\n            watch.set.Hora(int(args[1]))\n            watch.set.Minuto(int(args[2]))\n            watch.set.Segundo(int(args[3])) \n        elif args[0] == \"show\":\n            print(watch)\n        elif args[0] == \"next\":\n            watch.nextSegundo()\n        else:\n            print(\"comando invalido\")\nmain()",
+            "lines": "57"
+        }
+    ]
+}
