@@ -3,7 +3,8 @@ class Roupa:
         self._tamanho: str = ""
     
     def __str__(self) -> str:
-       
+        if self._tamanho == "":
+            return "size: (sem tamanho definido)"
         return f"size: ({self._tamanho})"
     def getTamanho(self) -> str:
         return self._tamanho
