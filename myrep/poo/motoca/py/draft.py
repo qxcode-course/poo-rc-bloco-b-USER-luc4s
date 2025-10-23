@@ -59,3 +59,31 @@ class Motoca:
         def __str__(self):
             pessoa_str = str(self.pessoa) if self.pessoa else "empty"
             return f"power:{self.potencia}, time:{self.time}, person:({pessoa_str})"
+
+def main():
+    moto = Motoca()
+    while True:
+        line = input()
+        print(f"${line}")
+        args = line.split()
+
+        if args[0] == "end":
+            break
+        elif args[0] == "init":
+            moto = Motoca(int(args[1]))
+        elif args[0] == "leave":
+            pessoa = moto.remove()
+            if pessoa!= None: print(pessoa)
+        elif args[0] == "enter":
+            pessoa = Pessoa(args[1], int(args[2]))
+            moto.insert(pessoa)
+        elif args[0] == "buy":
+            moto.buy_time(int(args[1]))
+        elif args[0] == "drive":
+            moto.drive(int(args[1]))
+        elif args[0] == "honk":
+            moto.honk()
+        elif args[0]=="show":
+            print(moto)
+
+main() 
