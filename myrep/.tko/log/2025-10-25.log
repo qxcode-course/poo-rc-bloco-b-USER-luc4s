@@ -12,3 +12,13 @@
 2025-10-25 17:22:53, EXEC, v:1, k:poo@relogio, mode:FULL, rate:84, size:65
 2025-10-25 17:25:27, EXEC, v:1, k:poo@relogio, mode:FULL, rate:100, size:68
 2025-10-25 17:26:34, MOVE, v:1, k:poo@relogio, mode:BACK
+2025-10-25 18:05:40, MOVE, v:1, k:poo@motoca, mode:PICK
+2025-10-25 18:05:41, EXEC, v:1, k:poo@motoca, mode:FULL, rate:0, size:89
+2025-10-25 18:10:55, EXEC, v:1, k:poo@motoca, mode:FULL, rate:6, size:89
+2025-10-25 18:12:40, EXEC, v:1, k:poo@motoca, mode:FULL, rate:33, size:89
+2025-10-25 18:13:24, EXEC, v:1, k:poo@motoca, mode:FULL, rate:33, size:90
+2025-10-25 18:15:16, EXEC, v:1, k:poo@motoca, mode:FULL, rate:33, size:90
+2025-10-25 18:17:05, EXEC, v:1, k:poo@motoca, mode:FULL, rate:33, size:90
+2025-10-25 18:18:16, EXEC, v:1, k:poo@motoca, mode:FULL, rate:93, size:90
+2025-10-25 18:21:00, EXEC, v:1, k:poo@motoca, mode:FULL, rate:100, size:89
+2025-10-25 18:33:20, MOVE, v:1, k:poo@motoca, mode:BACK

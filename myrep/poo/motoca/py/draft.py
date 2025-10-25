@@ -31,7 +31,6 @@ class Motoca:
             return None
         pessoa = self.pessoa
         self.pessoa = None
-        print(pessoa)
         return pessoa
     
     def buyTime(self, time: int):
@@ -53,12 +52,12 @@ class Motoca:
         else:
             self.time -= time
 
-        def honk(self):
-            return "P" + ("e" * self.potencia) + "m"
+    def honk(self):
+        return "P" + ("e" * self.potencia) + "m"
 
-        def __str__(self):
-            pessoa_str = str(self.pessoa) if self.pessoa else "empty"
-            return f"power:{self.potencia}, time:{self.time}, person:({pessoa_str})"
+    def __str__(self):
+        pessoa_str = str(self.pessoa) if self.pessoa else "empty"
+        return f"power:{self.potencia}, time:{self.time}, person:({pessoa_str})"
 
 def main():
     motoca = Motoca()
@@ -72,17 +71,18 @@ def main():
         elif args[0] == "init":
             motoca = Motoca(int(args[1]))
         elif args[0] == "leave":
-            pessoa = motoca.remove()
-            if pessoa!= None: print(pessoa)
+            pessoa = motoca.remover()
+            if pessoa!= None:
+                print(pessoa)
         elif args[0] == "enter":
             pessoa = Pessoa(args[1], int(args[2]))
-            motoca.insert(pessoa)
+            motoca.inserir(pessoa)
         elif args[0] == "buy":
-            motoca.buy_time(int(args[1]))
+            motoca.buyTime(int(args[1]))
         elif args[0] == "drive":
             motoca.drive(int(args[1]))
         elif args[0] == "honk":
-            motoca.honk()
+            print(motoca.honk())
         elif args[0]=="show":
             print(motoca)
 
