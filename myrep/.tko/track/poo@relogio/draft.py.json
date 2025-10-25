@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2025-10-23_15-07-31",
-            "content": "class Watch:\n    def __init__(self):\n        self.hora = 0\n        self.minuto = 0\n        self.segundo = 0\n    \n    def setHora(self, valor: int):\n        if valor >= 0 and valor <= 23:\n            self.hora = valor\n        elif valor > 23:\n            self.hora = 0\n    \n    def setMinuto(self, valor: int):\n        if valor >= 0 and valor <= 59:\n            self.minuto = valor\n        elif valor == 60:\n            self.setHora(1)\n    \n    def setSegundo(self, valor: int):\n        if valor >= 0 and valor <= 59:\n            self.segundo = valor\n        elif valor == 60:\n            self.setMinuto(1)\n    def nextSegundo(self):\n        self.segundo += 1\n        if(self.segundo >=60):\n            self.minuto +=1\n            self.segundo = 0\n            if(self.minuto >=60):\n                self.hora +=1\n                self.minuto=0\n                if(self.hora >= 24):\n                    self.hora = 0\n\ndef main():\n    watch = Watch()\n\n    while True:\n        line = input()\n        print(f\"${line}\")\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            watch = Watch(int(args[1]), int(args[2]), int(args[3]))\n        elif args[0] == \"set\":\n            watch.set.Hora(int(args[1]))\n            watch.set.Minuto(int(args[2]))\n            watch.set.Segundo(int(args[3])) \n        elif args[0] == \"show\":\n            print(watch)\n        elif args[0] == \"next\":\n            watch.nextSegundo()\n        else:\n            print(\"comando invalido\")\nmain()",
+            "content": "@@ -31,37 +31,8 @@\n self\n-, hora=0, minuto=0, segundo=0\n ):%0A \n@@ -50,20 +50,17 @@\n .hora = \n-hora\n+0\n %0A       \n@@ -74,22 +74,17 @@\n inuto = \n-minuto\n+0\n %0A       \n@@ -99,23 +99,17 @@\n gundo = \n-segundo\n+0\n %0A    %0A  \n@@ -144,36 +144,46 @@\n nt):%0A        if \n-0 %3C=\n+valor %3E= 0 and\n  valor %3C= 23:%0A  \n@@ -212,34 +212,45 @@\n valor%0A        el\n-se\n+if valor %3E 23\n :%0A            se\n@@ -306,36 +306,46 @@\n nt):%0A        if \n-0 %3C=\n+valor %3E= 0 and\n  valor %3C= 59:%0A  \n@@ -376,34 +376,46 @@\n valor%0A        el\n-se\n+if valor == 60\n :%0A            se\n@@ -413,34 +413,34 @@\n        self.\n-minuto = 0\n+setHora(1)\n %0A    %0A    de\n@@ -486,12 +486,22 @@\n  if \n-0 %3C=\n+valor %3E= 0 and\n  val\n@@ -545,34 +545,46 @@\n valor%0A        el\n-se\n+if valor == 60\n :%0A            se\n@@ -588,26 +588,26 @@\n  self.se\n-gundo = 0%0A\n+tMinuto(1)\n %0A    def\n@@ -658,25 +658,25 @@\n 1%0A        if\n- \n+(\n self.segundo\n@@ -674,27 +674,27 @@\n f.segundo %3E=\n- \n 60\n+)\n :%0A          \n@@ -696,35 +696,34 @@\n        self.\n-segundo = 0\n+minuto +=1\n %0A           \n@@ -732,19 +732,19 @@\n elf.\n-minut\n+segund\n o \n-+\n = \n-1\n+0\n %0A   \n@@ -750,25 +750,25 @@\n           if\n- \n+(\n self.minuto \n@@ -769,19 +769,19 @@\n inuto %3E=\n- \n 60\n+)\n :%0A      \n@@ -791,34 +791,32 @@\n        self.\n-minuto = 0\n+hora +=1\n %0A           \n@@ -829,17 +829,16 @@\n elf.\n-hora += 1\n+minuto=0\n %0A   \n@@ -852,17 +852,17 @@\n       if\n- \n+(\n self.hor\n@@ -868,16 +868,17 @@\n ra %3E= 24\n+)\n :%0A      \n@@ -910,104 +910,8 @@\n  0%0A%0A\n-    def __str__(self):%0A        return f%22%7Bself.hora:02d%7D:%7Bself.minuto:02d%7D:%7Bself.segundo:02d%7D%22%0A%0A%0A\n def \n@@ -1228,24 +1228,25 @@\n    watch.set\n+.\n Hora(int(arg\n@@ -1269,24 +1269,25 @@\n    watch.set\n+.\n Minuto(int(a\n@@ -1316,16 +1316,17 @@\n atch.set\n+.\n Segundo(\n@@ -1517,12 +1517,10 @@\n o%22)%0A\n-%0A\n main()\n-%0A\n",
             "lines": "57"
+        },
+        {
+            "label": "2025-10-25_16-57-38",
+            "content": "@@ -273,36 +273,21 @@\n     \n-print(%22fail: hora invalida%22)\n+self.hora = 0\n %0A   \n@@ -416,38 +416,23 @@\n     \n-print(%22fail: minuto invalida%22)\n+self.minuto = 0\n %0A   \n@@ -563,39 +563,24 @@\n     \n-print(%22fail: segundo invalida%22)\n+self.segundo = 0\n %0A%0A  \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-10-25_17-09-39",
+            "content": "@@ -454,17 +454,17 @@\n  invalid\n-o\n+a\n %22)%0A    %0A\n@@ -613,25 +613,25 @@\n undo invalid\n-o\n+a\n %22)%0A%0A    def \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-10-25_17-10-09",
+            "content": "@@ -699,17 +699,17 @@\n segundo \n-=\n+%3E\n = 60:%0A  \n@@ -791,17 +791,17 @@\n .minuto \n-=\n+%3E\n = 60:%0A  \n@@ -890,17 +890,17 @@\n lf.hora \n-=\n+%3E\n = 24:%0A  \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-10-25_17-15-10",
+            "content": "@@ -247,87 +247,8 @@\n lor%0A\n-        elif 0 %3E valor or valor %3E 24:%0A            print(%22fail: hora invalida%22)%0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-10-25_17-18-49",
+            "content": "@@ -195,30 +195,20 @@\n      if \n-valor %3E= 0 and\n+0 %3C=\n  valor %3C\n@@ -259,23 +259,21 @@\n elif\n+ 0 %3E\n  valor \n-%3E= 0 and\n+or\n  val\n@@ -322,17 +322,16 @@\n alida%22)%0A\n-%0A\n         \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-10-25_17-20-43",
+            "content": "@@ -273,16 +273,31 @@\n  valor %3E\n+= 0 and valor %3E\n  24:%0A   \n@@ -330,24 +330,25 @@\n  invalida%22)%0A\n+%0A\n         else\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-25_17-21-18",
+            "content": "@@ -840,32 +840,36 @@\n to += 1%0A        \n+    \n if self.minuto =\n@@ -878,32 +878,36 @@\n 60:%0A            \n+   \n+ \n self.minuto = 0%0A\n@@ -910,32 +910,36 @@\n = 0%0A            \n+    \n self.hora += 1%0A \n@@ -937,32 +937,40 @@\n ra += 1%0A        \n+  \n+      \n if self.hora == \n@@ -969,24 +969,32 @@\n hora == 24:%0A\n+        \n             \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-10-25_17-22-53",
+            "content": "@@ -80,103 +80,15 @@\n hora\n-: int = 0%0A        self.minuto: int = 0%0A        self.segundo: int = 0%0A        self.setHora(\n+ = \n hora\n-)\n %0A   \n@@ -101,25 +101,23 @@\n elf.\n-setM\n+m\n inuto\n-(\n+ = \n minuto\n-)\n %0A   \n@@ -132,25 +132,23 @@\n f.se\n-tSe\n gundo\n-(\n+ = \n segundo\n-)\n %0A   \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-10-25_17-25-27",
+            "content": "class Watch:\n    def __init__(self, hora=0, minuto=0, segundo=0):\n        self.hora: int = 0\n        self.minuto: int = 0\n        self.segundo: int = 0\n        self.setHora(hora)\n        self.setMinuto(minuto)\n        self.setSegundo(segundo)\n    \n    def setHora(self, valor: int):\n        if valor >= 0 and valor <= 23:\n            self.hora = valor\n        elif valor > 24:\n            print(\"fail: hora invalida\")\n        else:\n            print(\"fail: hora invalida\")\n    \n    def setMinuto(self, valor: int):\n        if 0 <= valor <= 59:\n            self.minuto = valor\n        else:\n            print(\"fail: minuto invalido\")\n    \n    def setSegundo(self, valor: int):\n        if 0 <= valor <= 59:\n            self.segundo = valor\n        else:\n            print(\"fail: segundo invalido\")\n\n    def nextSegundo(self):\n        self.segundo += 1\n        if self.segundo == 60:\n            self.segundo = 0\n            self.minuto += 1\n        if self.minuto == 60:\n            self.minuto = 0\n            self.hora += 1\n        if self.hora == 24:\n            self.hora = 0\n\n    def __str__(self):\n        return f\"{self.hora:02d}:{self.minuto:02d}:{self.segundo:02d}\"\n\n\ndef main():\n    watch = Watch()\n\n    while True:\n        line = input()\n        print(f\"${line}\")\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            watch = Watch(int(args[1]), int(args[2]), int(args[3]))\n        elif args[0] == \"set\":\n            watch.setHora(int(args[1]))\n            watch.setMinuto(int(args[2]))\n            watch.setSegundo(int(args[3])) \n        elif args[0] == \"show\":\n            print(watch)\n        elif args[0] == \"next\":\n            watch.nextSegundo()\n        else:\n            print(\"comando invalido\")\n\nmain()\n",
+            "lines": "68"
         }
     ]
 }
