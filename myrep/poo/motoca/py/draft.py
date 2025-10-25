@@ -61,7 +61,7 @@ class Motoca:
             return f"power:{self.potencia}, time:{self.time}, person:({pessoa_str})"
 
 def main():
-    moto = Motoca()
+    motoca = Motoca()
     while True:
         line = input()
         print(f"${line}")
@@ -70,20 +70,20 @@ def main():
         if args[0] == "end":
             break
         elif args[0] == "init":
-            moto = Motoca(int(args[1]))
+            motoca = Motoca(int(args[1]))
         elif args[0] == "leave":
-            pessoa = moto.remove()
+            pessoa = motoca.remove()
             if pessoa!= None: print(pessoa)
         elif args[0] == "enter":
             pessoa = Pessoa(args[1], int(args[2]))
-            moto.insert(pessoa)
+            motoca.insert(pessoa)
         elif args[0] == "buy":
-            moto.buy_time(int(args[1]))
+            motoca.buy_time(int(args[1]))
         elif args[0] == "drive":
-            moto.drive(int(args[1]))
+            motoca.drive(int(args[1]))
         elif args[0] == "honk":
-            moto.honk()
+            motoca.honk()
         elif args[0]=="show":
-            print(moto)
+            print(motoca)
 
 main() 
