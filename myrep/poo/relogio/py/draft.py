@@ -1,37 +1,42 @@
 class Watch:
     def __init__(self, hora=0, minuto=0, segundo=0):
-        self.hora = hora
-        self.minuto = minuto
-        self.segundo = segundo
+        self.hora: int = 0
+        self.minuto: int = 0
+        self.segundo: int = 0
+        self.setHora(hora)
+        self.setMinuto(minuto)
+        self.setSegundo(segundo)
     
     def setHora(self, valor: int):
-        if 0 <= valor <= 23:
+        if valor >= 0 and valor <= 23:
             self.hora = valor
+        elif valor > 24:
+            print("fail: hora invalida")
         else:
-            self.hora = 0
+            print("fail: hora invalida")
     
     def setMinuto(self, valor: int):
         if 0 <= valor <= 59:
             self.minuto = valor
         else:
-            self.minuto = 0
+            print("fail: minuto invalido")
     
     def setSegundo(self, valor: int):
         if 0 <= valor <= 59:
             self.segundo = valor
         else:
-            self.segundo = 0
+            print("fail: segundo invalido")
 
     def nextSegundo(self):
         self.segundo += 1
-        if self.segundo >= 60:
+        if self.segundo == 60:
             self.segundo = 0
             self.minuto += 1
-            if self.minuto >= 60:
-                self.minuto = 0
-                self.hora += 1
-                if self.hora >= 24:
-                    self.hora = 0
+        if self.minuto == 60:
+            self.minuto = 0
+            self.hora += 1
+        if self.hora == 24:
+            self.hora = 0
 
     def __str__(self):
         return f"{self.hora:02d}:{self.minuto:02d}:{self.segundo:02d}"
