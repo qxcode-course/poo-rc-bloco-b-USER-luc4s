@@ -1,36 +1,41 @@
 class Watch:
-    def __init__(self):
-        self.hora = 0
-        self.minuto = 0
-        self.segundo = 0
+    def __init__(self, hora=0, minuto=0, segundo=0):
+        self.hora = hora
+        self.minuto = minuto
+        self.segundo = segundo
     
     def setHora(self, valor: int):
-        if valor >= 0 and valor <= 23:
+        if 0 <= valor <= 23:
             self.hora = valor
-        elif valor > 23:
+        else:
             self.hora = 0
     
     def setMinuto(self, valor: int):
-        if valor >= 0 and valor <= 59:
+        if 0 <= valor <= 59:
             self.minuto = valor
-        elif valor == 60:
-            self.setHora(1)
+        else:
+            self.minuto = 0
     
     def setSegundo(self, valor: int):
-        if valor >= 0 and valor <= 59:
+        if 0 <= valor <= 59:
             self.segundo = valor
-        elif valor == 60:
-            self.setMinuto(1)
+        else:
+            self.segundo = 0
+
     def nextSegundo(self):
         self.segundo += 1
-        if(self.segundo >=60):
-            self.minuto +=1
+        if self.segundo >= 60:
             self.segundo = 0
-            if(self.minuto >=60):
-                self.hora +=1
-                self.minuto=0
-                if(self.hora >= 24):
+            self.minuto += 1
+            if self.minuto >= 60:
+                self.minuto = 0
+                self.hora += 1
+                if self.hora >= 24:
                     self.hora = 0
+
+    def __str__(self):
+        return f"{self.hora:02d}:{self.minuto:02d}:{self.segundo:02d}"
+
 
 def main():
     watch = Watch()
@@ -45,13 +50,14 @@ def main():
         elif args[0] == "init":
             watch = Watch(int(args[1]), int(args[2]), int(args[3]))
         elif args[0] == "set":
-            watch.set.Hora(int(args[1]))
-            watch.set.Minuto(int(args[2]))
-            watch.set.Segundo(int(args[3])) 
+            watch.setHora(int(args[1]))
+            watch.setMinuto(int(args[2]))
+            watch.setSegundo(int(args[3])) 
         elif args[0] == "show":
             print(watch)
         elif args[0] == "next":
             watch.nextSegundo()
         else:
             print("comando invalido")
+
 main()
