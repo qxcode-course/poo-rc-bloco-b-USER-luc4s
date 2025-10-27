@@ -7,13 +7,8 @@ sources:
   filters: null
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
-<<<<<<< HEAD
   cache_path: C:\Users\pedro\OneDrive\Desktop\poo-rc-bloco-b-USER-luc4s\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-25 14:59:14'
-=======
-  cache_path: /workspaces/poo-rc-bloco-b-USER-luc4s/myrep/.tko/cache/poo.md
-  cache_timestamp: '2025-10-25 18:05:31'
->>>>>>> d32cb8f2b77252fd2fceec2d0ddc6a330958d2d6
+  cache_timestamp: '2025-10-27 11:49:30'
   filters:
   - acesso
   - simples
@@ -33,4 +28,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@motoca
+selected: poo@grafite
