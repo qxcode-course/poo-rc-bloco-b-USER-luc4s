@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-28_14-42-30",
+            "content": "class Notebook:\n    def __init__(self):\n        self._ligado: bool = False\n        self._bateria: Bateria\n\n    def ligar(self):\n        if not self._ligado:\n            self._ligado = True\n            print(\"Notebook: ligado\")\n        else:\n            print(\"Notebook: desligado\")\n    \n    def desligar(self):\n        if self._ligado:\n            self._ligado = False\n            print(\"Notebook: desligado\")\n        else:\n            print(\"Notebook: ja esta desligado\")\n\n    def mostrar(self):\n        if self._ligado:\n            status = \"Ligado\"\n        else:\n            status = \"Desligado\"\n        print(f\"Status: {status}\")\n    \n    def usar(self, valor: int):\n        if self._ligado:\n            self.gastar_bateria(valor)\n        else:\n            print(\"Notebook: esta desligado, nao pode usar\")",
+            "lines": "31"
+        }
+    ]
+}
