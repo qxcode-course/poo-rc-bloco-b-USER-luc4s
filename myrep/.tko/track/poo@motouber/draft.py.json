@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-28_01-13-45",
+            "content": "@@ -785,17 +785,18 @@\n  def set\n-D\n+_d\n rive(sel\n@@ -880,20 +880,26 @@\n  def set\n-P\n+_p\n ass\n+enger\n (self, n\n@@ -2164,26 +2164,17 @@\n cmd \n-in (\n+== \n %22$end%22\n-, %22end%22)\n :%0A  \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-10-28_01-17-03",
+            "content": "@@ -700,25 +700,25 @@\n lf._custo = \n-0\n+1\n %0A        sel\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-10-28_01-17-21",
+            "content": "@@ -637,17 +637,24 @@\n , True %0A\n-%0A\n+        \n %0Aclass M\n@@ -790,17 +790,16 @@\n setDrive\n-r\n (self, n\n@@ -1256,25 +1256,16 @@\n  return%0A\n-        %0A\n         \n@@ -1684,16 +1684,20 @@\n to = 0%0A%0A\n+    \n     def \n@@ -1700,32 +1700,36 @@\n def show(self):%0A\n+    \n         driver =\n@@ -1785,24 +1785,28 @@\n ne%22%0A        \n+ \n+   \n passenger = \n@@ -1851,32 +1851,36 @@\n iro else %22None%22%0A\n+    \n         print(f%22\n@@ -1944,17 +1944,16 @@\n ger%7D%22)%0A%0A\n-%0A\n def main\n@@ -2886,43 +2886,10 @@\n  e)%0A\n-%0Aif __name__ == %22__main__%22:%0A    \n main()\n-%0A\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-10-28_01-17-40",
+            "content": "@@ -1931,16 +1931,17 @@\n ger%7D%22)%0A%0A\n+%0A\n def main\n@@ -1962,16 +1962,17 @@\n  Moto()%0A\n+%0A\n     whil\n@@ -1987,21 +1987,40 @@\n         \n-linha\n+try:%0A            comando\n  = input\n@@ -2029,17 +2029,29 @@\n .strip()\n-%0A\n+.split()%0A    \n         \n@@ -2061,15 +2061,21 @@\n not \n-linha:%0A\n+comando:%0A    \n     \n@@ -2100,36 +2100,8 @@\n     \n-    comando = linha.split()%0A\n     \n@@ -2122,16 +2122,20 @@\n ndo%5B0%5D%0A%0A\n+    \n         \n@@ -2177,14 +2177,23 @@\n     \n+  \n+  \n break%0A\n+%0A    \n     \n@@ -2225,24 +2225,28 @@\n             \n+    \n moto.show()%0A\n@@ -2245,24 +2245,28 @@\n .show()%0A\n+%0A   \n         \n elif cmd\n@@ -2249,32 +2249,33 @@\n w()%0A%0A           \n+ \n elif cmd == %22$se\n@@ -2300,60 +2300,132 @@\n     \n-moto.setDriver(comando%5B1%5D, int(comando%5B2%5D))%0A\n+    nome = comando%5B1%5D%0A                dinheiro = int(comando%5B2%5D)%0A                moto.setDriver(nome, dinheiro)%0A%0A   \n         \n elif\n@@ -2412,32 +2412,33 @@\n ro)%0A%0A           \n+ \n elif cmd == %22$se\n@@ -2461,50 +2461,123 @@\n     \n-moto.setPass(comando%5B1%5D, int(comando%5B2%5D))%0A\n+    nome = comando%5B1%5D%0A                dinheiro = int(comando%5B2%5D)%0A                moto.setPass(nome, dinheiro)%0A%0A    \n     \n@@ -2618,19 +2618,17 @@\n     \n-moto.drive(\n+    km = \n int(\n@@ -2638,18 +2638,53 @@\n ando%5B1%5D)\n-)\n %0A\n+                moto.drive(km)%0A%0A    \n         \n@@ -2717,24 +2717,28 @@\n             \n+    \n moto.leavePa\n@@ -2742,24 +2742,28 @@\n ePass()%0A\n+%0A   \n         \n else:%0A  \n@@ -2746,38 +2746,43 @@\n s()%0A%0A           \n+ \n else:%0A\n+    \n             prin\n@@ -2808,14 +2808,109 @@\n mmand%22)%0A\n+%0A        except Exception as e:%0A            print(%22fail:%22, e)%0A%0Aif __name__ == %22__main__%22:%0A    \n main()\n+%0A\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-28_01-23-03",
+            "content": "@@ -2131,16 +2131,17 @@\n md in (%22\n+$\n end%22, %22e\n@@ -2185,16 +2185,17 @@\n cmd == %22\n+$\n show%22:%0A \n@@ -2238,16 +2238,17 @@\n cmd == %22\n+$\n setDrive\n@@ -2328,16 +2328,17 @@\n cmd == %22\n+$\n setPass%22\n@@ -2414,16 +2414,17 @@\n cmd == %22\n+$\n drive%22:%0A\n@@ -2484,16 +2484,17 @@\n cmd == %22\n+$\n leavePas\n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-10-28_01-31-31",
+            "content": "@@ -2115,47 +2115,8 @@\n 0%5D%0A%0A\n-        print(f%22$%7B' '.join(comando)%7D%22)%0A\n     \n@@ -2135,9 +2135,8 @@\n n (%22\n-$\n end%22\n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-10-28_01-39-24",
+            "content": "@@ -1113,14 +1113,14 @@\n sto \n++\n = km%0A\n-%0A\n     \n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-10-28_01-41-03",
+            "content": "@@ -1115,17 +1115,16 @@\n o = km%0A%0A\n-%0A\n     %0A   \n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-10-28_01-42-04",
+            "content": "@@ -2151,17 +2151,16 @@\n ndo)%7D%22)%0A\n-%0A\n         \n@@ -2225,17 +2225,16 @@\n cmd == %22\n-$\n show%22:%0A \n@@ -2277,17 +2277,16 @@\n cmd == %22\n-$\n setDrive\n@@ -2366,17 +2366,16 @@\n cmd == %22\n-$\n setPass%22\n@@ -2451,17 +2451,16 @@\n cmd == %22\n-$\n drive%22:%0A\n@@ -2520,17 +2520,16 @@\n cmd == %22\n-$\n leavePas\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-10-28_01-45-33",
+            "content": "@@ -2151,16 +2151,17 @@\n ndo)%7D%22)%0A\n+%0A\n         \n@@ -2226,16 +2226,17 @@\n cmd == %22\n+$\n show%22:%0A \n@@ -2279,16 +2279,17 @@\n cmd == %22\n+$\n setDrive\n@@ -2369,16 +2369,17 @@\n cmd == %22\n+$\n setPass%22\n@@ -2455,16 +2455,17 @@\n cmd == %22\n+$\n drive%22:%0A\n@@ -2525,16 +2525,17 @@\n cmd == %22\n+$\n leavePas\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-10-28_01-45-41",
+            "content": "@@ -1114,16 +1114,18 @@\n to = km%0A\n+%0A%0A\n     %0A   \n@@ -1338,32 +1338,8 @@\n sta%0A\n-        self._custo = 0%0A\n     \n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-10-28_01-48-38",
+            "content": "@@ -1332,16 +1332,40 @@\n torista%0A\n+        self._custo = 0%0A\n         \n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-10-28_01-48-46",
+            "content": "@@ -1109,17 +1109,16 @@\n ._custo \n-+\n = km%0A   \n@@ -1930,17 +1930,16 @@\n ger%7D%22)%0A%0A\n-%0A\n def main\n@@ -2109,16 +2109,17 @@\n ando%5B0%5D%0A\n+%0A\n         \n@@ -2132,18 +2132,29 @@\n f%22$%7B\n-linha\n+' '.join(comando)\n %7D%22)%0A\n-%0A\n     \n@@ -2223,17 +2223,16 @@\n cmd == %22\n-$\n show%22:%0A \n@@ -2275,17 +2275,16 @@\n cmd == %22\n-$\n setDrive\n@@ -2364,17 +2364,16 @@\n cmd == %22\n-$\n setPass%22\n@@ -2449,17 +2449,16 @@\n cmd == %22\n-$\n drive%22:%0A\n@@ -2518,17 +2518,16 @@\n cmd == %22\n-$\n leavePas\n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-10-28_01-50-38",
+            "content": "@@ -1109,16 +1109,17 @@\n ._custo \n++\n = km%0A   \n@@ -1931,16 +1931,17 @@\n ger%7D%22)%0A%0A\n+%0A\n def main\n@@ -2111,17 +2111,16 @@\n ando%5B0%5D%0A\n-%0A\n         \n@@ -2133,29 +2133,18 @@\n f%22$%7B\n-' '.join(comando)\n+linha\n %7D%22)%0A\n+%0A\n     \n@@ -2213,16 +2213,17 @@\n cmd == %22\n+$\n show%22:%0A \n@@ -2266,16 +2266,17 @@\n cmd == %22\n+$\n setDrive\n@@ -2356,16 +2356,17 @@\n cmd == %22\n+$\n setPass%22\n@@ -2442,16 +2442,17 @@\n cmd == %22\n+$\n drive%22:%0A\n@@ -2512,16 +2512,17 @@\n cmd == %22\n+$\n leavePas\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-10-28_01-51-14",
+            "content": "@@ -1109,17 +1109,16 @@\n ._custo \n-+\n = km%0A   \n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-10-28_01-53-34",
+            "content": "@@ -1630,16 +1630,73 @@\n left%22)%0A%0A\n+        self._passageiro = None%0A        self._custo = 0%0A%0A\n     def \n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-10-28_01-55-10",
+            "content": "@@ -1634,65 +1634,8 @@\n %22)%0A%0A\n-        self._passageiro = None%0A        self._custo = 0%0A%0A\n     \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-10-28_01-55-24",
+            "content": "@@ -1554,25 +1554,16 @@\n money%22)%0A\n-        %0A\n         \n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-10-28_01-59-07",
+            "content": "class Pessoa:\n    def __init__(self, nome, dinheiro):\n        self._nome = nome\n        self._dinheiro = dinheiro\n    \n    def __str__(self):\n        return f\"{self._nome}:{self._dinheiro}\"\n    \n    def get_nome(self):\n        return self._nome\n    \n    def get_dinheiro(self):\n        return self._dinheiro\n    \n    def adicionar_dinheiro(self, valor):\n        self._dinheiro += valor\n    \n    def gastar_dinheiro(self, valor):\n        if valor > self._dinheiro:\n            gasto = self._dinheiro\n            self._dinheiro = 0\n            return gasto, False\n        else:\n            self._dinheiro -= valor\n            return valor, True \n\n\nclass Moto:\n    def __init__(self):\n        self._custo = 0\n        self._motorista = None\n        self._passageiro = None\n    \n    def setDriver(self, nome, dinheiro):\n        self._motorista = Pessoa(nome, dinheiro)\n    \n    def setPass(self, nome, dinheiro):\n        self._passageiro = Pessoa(nome, dinheiro)\n    \n    def drive(self, km):\n        if self._passageiro is None:\n            print(\"fail: No passenger on the ride\")\n            return\n        self._custo += km\n    \n    def leavePass(self):\n        if self._passageiro is None:\n            print(\"fail: No passenger to leave\")\n            return\n        \n        passageiro = self._passageiro\n        motorista = self._motorista\n        custo = self._custo\n\n        pago, completo = passageiro.gastar_dinheiro(custo)\n        motorista.adicionar_dinheiro(pago)\n\n        if not completo:\n            print(\"fail: Passenger does not have enough money\")\n        \n        print(f\"{passageiro.get_nome()}:{passageiro.get_dinheiro()} left\")\n\n        self._passageiro = None\n        self._custo = 0\n\n    def show(self):\n        driver = str(self._motorista) if self._motorista else \"None\"\n        passenger = str(self._passageiro) if self._passageiro else \"None\"\n        print(f\"Cost: {self._custo}, Driver: {driver}, Passenger: {passenger}\")\n\ndef main():\n    moto = Moto()\n    while True:\n        linha = input().strip()\n        if not linha:\n            continue\n\n        comando = linha.split()\n        cmd = comando[0]\n\n        print(f\"${' '.join(comando)}\")\n        if cmd in (\"$end\", \"end\"):\n            break\n        elif cmd == \"show\":\n            moto.show()\n        elif cmd == \"setDriver\":\n            moto.setDriver(comando[1], int(comando[2]))\n        elif cmd == \"setPass\":\n            moto.setPass(comando[1], int(comando[2]))\n        elif cmd == \"drive\":\n            moto.drive(int(comando[1]))\n        elif cmd == \"leavePass\":\n            moto.leavePass()\n        else:\n            print(\"fail: invalid command\")\nmain()",
+            "lines": "96"
+        }
+    ]
+}

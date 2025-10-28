@@ -23,17 +23,18 @@ class Pessoa:
         else:
             self._dinheiro -= valor
             return valor, True 
-        
+
+
 class Moto:
     def __init__(self):
-        self._custo = 1
+        self._custo = 0
         self._motorista = None
         self._passageiro = None
     
-    def set_drive(self, nome, dinheiro):
+    def setDriver(self, nome, dinheiro):
         self._motorista = Pessoa(nome, dinheiro)
     
-    def set_passenger(self, nome, dinheiro):
+    def setPass(self, nome, dinheiro):
         self._passageiro = Pessoa(nome, dinheiro)
     
     def drive(self, km):
@@ -46,6 +47,7 @@ class Moto:
         if self._passageiro is None:
             print("fail: No passenger to leave")
             return
+        
         passageiro = self._passageiro
         motorista = self._motorista
         custo = self._custo
@@ -55,53 +57,40 @@ class Moto:
 
         if not completo:
             print("fail: Passenger does not have enough money")
+        
         print(f"{passageiro.get_nome()}:{passageiro.get_dinheiro()} left")
 
         self._passageiro = None
         self._custo = 0
 
-        def show(self):
-            driver = str(self._motorista) if self._motorista else "None"
-            passenger = str(self._passageiro) if self._passageiro else "None"
-            print(f"Cost: {self._custo}, Driver: {driver}, Passenger: {passenger}")
+    def show(self):
+        driver = str(self._motorista) if self._motorista else "None"
+        passenger = str(self._passageiro) if self._passageiro else "None"
+        print(f"Cost: {self._custo}, Driver: {driver}, Passenger: {passenger}")
 
 def main():
     moto = Moto()
-
     while True:
-        try:
-            comando = input().strip().split()
-            if not comando:
-                continue
+        linha = input().strip()
+        if not linha:
+            continue
 
-            cmd = comando[0]
+        comando = linha.split()
+        cmd = comando[0]
 
-            if cmd == "$end":
-                break
-
-            elif cmd == "$show":
-                moto.show()
-
-            elif cmd == "$setDriver":
-                nome = comando[1]
-                dinheiro = int(comando[2])
-                moto.setDriver(nome, dinheiro)
-
-            elif cmd == "$setPass":
-                nome = comando[1]
-                dinheiro = int(comando[2])
-                moto.setPass(nome, dinheiro)
-
-            elif cmd == "$drive":
-                km = int(comando[1])
-                moto.drive(km)
-
-            elif cmd == "$leavePass":
-                moto.leavePass()
-
-            else:
-                print("fail: invalid command")
-
-        except Exception as e:
-            print("fail:", e)
+        print(f"${' '.join(comando)}")
+        if cmd in ("$end", "end"):
+            break
+        elif cmd == "show":
+            moto.show()
+        elif cmd == "setDriver":
+            moto.setDriver(comando[1], int(comando[2]))
+        elif cmd == "setPass":
+            moto.setPass(comando[1], int(comando[2]))
+        elif cmd == "drive":
+            moto.drive(int(comando[1]))
+        elif cmd == "leavePass":
+            moto.leavePass()
+        else:
+            print("fail: invalid command")
 main()
