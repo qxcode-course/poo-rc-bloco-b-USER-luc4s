@@ -1,0 +1,107 @@
+class Pessoa:
+    def __init__(self, nome, dinheiro):
+        self._nome = nome
+        self._dinheiro = dinheiro
+    
+    def __str__(self):
+        return f"{self._nome}:{self._dinheiro}"
+    
+    def get_nome(self):
+        return self._nome
+    
+    def get_dinheiro(self):
+        return self._dinheiro
+    
+    def adicionar_dinheiro(self, valor):
+        self._dinheiro += valor
+    
+    def gastar_dinheiro(self, valor):
+        if valor > self._dinheiro:
+            gasto = self._dinheiro
+            self._dinheiro = 0
+            return gasto, False
+        else:
+            self._dinheiro -= valor
+            return valor, True 
+        
+class Moto:
+    def __init__(self):
+        self._custo = 1
+        self._motorista = None
+        self._passageiro = None
+    
+    def set_drive(self, nome, dinheiro):
+        self._motorista = Pessoa(nome, dinheiro)
+    
+    def set_passenger(self, nome, dinheiro):
+        self._passageiro = Pessoa(nome, dinheiro)
+    
+    def drive(self, km):
+        if self._passageiro is None:
+            print("fail: No passenger on the ride")
+            return
+        self._custo += km
+    
+    def leavePass(self):
+        if self._passageiro is None:
+            print("fail: No passenger to leave")
+            return
+        passageiro = self._passageiro
+        motorista = self._motorista
+        custo = self._custo
+
+        pago, completo = passageiro.gastar_dinheiro(custo)
+        motorista.adicionar_dinheiro(pago)
+
+        if not completo:
+            print("fail: Passenger does not have enough money")
+        print(f"{passageiro.get_nome()}:{passageiro.get_dinheiro()} left")
+
+        self._passageiro = None
+        self._custo = 0
+
+        def show(self):
+            driver = str(self._motorista) if self._motorista else "None"
+            passenger = str(self._passageiro) if self._passageiro else "None"
+            print(f"Cost: {self._custo}, Driver: {driver}, Passenger: {passenger}")
+
+def main():
+    moto = Moto()
+
+    while True:
+        try:
+            comando = input().strip().split()
+            if not comando:
+                continue
+
+            cmd = comando[0]
+
+            if cmd == "$end":
+                break
+
+            elif cmd == "$show":
+                moto.show()
+
+            elif cmd == "$setDriver":
+                nome = comando[1]
+                dinheiro = int(comando[2])
+                moto.setDriver(nome, dinheiro)
+
+            elif cmd == "$setPass":
+                nome = comando[1]
+                dinheiro = int(comando[2])
+                moto.setPass(nome, dinheiro)
+
+            elif cmd == "$drive":
+                km = int(comando[1])
+                moto.drive(km)
+
+            elif cmd == "$leavePass":
+                moto.leavePass()
+
+            else:
+                print("fail: invalid command")
+
+        except Exception as e:
+            print("fail:", e)
+main()

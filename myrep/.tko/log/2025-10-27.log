@@ -8,3 +8,5 @@
 2025-10-27 13:08:03, MOVE, v:1, k:poo@grafite, mode:PICK
 2025-10-27 13:08:06, EXEC, v:1, k:poo@grafite, mode:FULL, rate:0
 2025-10-27 13:12:54, MOVE, v:1, k:poo@grafite, mode:BACK
+2025-10-27 17:27:26, MOVE, v:1, k:poo@motouber, mode:DOWN
+2025-10-27 17:27:29, MOVE, v:1, k:poo@motouber, mode:PICK
